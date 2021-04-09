@@ -11,5 +11,16 @@ class BasePage():
         self.url = url
         self.browser.implicitly_wait(timeout)
 
+    def is_element_present(self, how, what):
+        # Чтобы перехватывать исключение, нужна конструкция try/except
+        try:
+            self.browser.find_element(how, what)
+        except (NoSuchElementException):
+            return False
+        return True
+
     def open(self):                             #открывает нужную страницу в браузере, используя метод get()
         self.browser.get(self.url)
+
+    def should_be_login_link(self):
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
