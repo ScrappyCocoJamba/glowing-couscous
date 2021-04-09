@@ -10,3 +10,6 @@ class BasePage():
         self.browser = browser
         self.url = url
         self.browser.implicitly_wait(timeout)
+
+    def open(self):                             #открывает нужную страницу в браузере, используя метод get()
+        self.browser.get(self.url)
