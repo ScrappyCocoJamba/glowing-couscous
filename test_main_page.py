@@ -15,3 +15,4 @@ class TestLoginFromMainPage():
         page = MainPage(browser, url)          # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес
         page.open()                            # открываем страницу
         time.sleep(10)
+        page.should_be_login_link()
