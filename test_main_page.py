@@ -16,8 +16,8 @@ class TestLoginFromMainPage():
         page = MainPage(browser, url)          # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес
         page.open()                            # открываем страницу
         page.should_be_login_link()
-        time.sleep(10)
+        time.sleep(5)
         page.go_to_mail_page()           # выполняем метод страницы — переходим на страницу почты
         mail = MailPage(browser, browser.current_url)  # Инициализируем LoginPage в теле теста
         mail.should_be_mail_page()
-        time.sleep(10)
+        time.sleep(5)
