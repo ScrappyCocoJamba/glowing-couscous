@@ -11,6 +11,10 @@ class BasePage():
         self.url = url
         self.browser.implicitly_wait(timeout)
 
+    def go_to_mail_page(self):
+        link = self.browser.find_element(*BasePageLocators.MAIL_LINK)
+        link.click()
+
     def is_element_present(self, how, what):
         # Чтобы перехватывать исключение, нужна конструкция try/except
         try:
